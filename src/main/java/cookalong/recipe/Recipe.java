@@ -5,20 +5,6 @@ import java.util.List;
 
 public class Recipe {
 
-    /*
-    id,
-    name,
-    dish_description,
-    image_url,
-    time,
-    serving_size,
-    calories,
-    ingredients (name, amount, allergens),
-    steps: list of step.id,
-    tools,
-    techniques,
-    tags,
-    */
     private long id;
     private String name;
     private String description;
