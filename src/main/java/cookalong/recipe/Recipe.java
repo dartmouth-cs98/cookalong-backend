@@ -11,7 +11,7 @@ public class Recipe {
     private int time;
     private int serving_size;
     private int calories;
-    private List<Integer> ingredients;
+    private List<RecipeIngredient> ingredients;
     private List<Integer> steps;
     private List<String> tools;
 //    private List<Integer> techniques;
@@ -53,7 +53,7 @@ public class Recipe {
         return calories;
     }
 
-    public List<Integer> getIngredients() {
+    public List<RecipeIngredient> getIngredients() {
         return ingredients;
     }
 
