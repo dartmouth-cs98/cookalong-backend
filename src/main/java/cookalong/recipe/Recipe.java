@@ -12,7 +12,7 @@ public class Recipe {
     private int serving_size;
     private int calories;
     private List<RecipeIngredient> ingredients;
-    private List<Integer> steps;
+    private List<RecipeStep> steps;
     private List<String> tools;
 //    private List<Integer> techniques;
 //    private List<Integer> tags;
@@ -57,7 +57,7 @@ public class Recipe {
         return ingredients;
     }
 
-    public List<Integer> getSteps() {
+    public List<RecipeStep> getSteps() {
         return steps;
     }
 
