@@ -19,6 +19,7 @@ public class RecipeController {
                 counter.incrementAndGet(),
                 name,
                 "Melted cheese on toasted bread",
+                "",
                 10,
                 1,
                 280
@@ -31,6 +32,7 @@ public class RecipeController {
                 gcid.get(),
                 "Grilled Cheese",
                 "Melted cheese on toasted bread",
+                "https://assets.bonappetit.com/photos/57acf62a53e63daf11a4dbee/16:9/w_2560,c_limit/best-ever-grilled-cheese.jpg",
                 10,
                 1,
                 280
@@ -69,6 +71,7 @@ public class RecipeController {
                 gcid.get() + 1,
                  "Cheater Pho",
                 "Vietnamese noodle dish, but with a quick and easy recipe",
+                "https://s23209.pcdn.co/wp-content/uploads/2015/10/Cheater-Pho-Asian-Noodle-SoupIMG_9265edit-360x360.jpg",
                 60,
                 2,
                 750
