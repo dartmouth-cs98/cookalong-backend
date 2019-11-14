@@ -64,4 +64,40 @@ public class Recipe {
     public List<String> getTools() {
         return tools;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public void setServing_size(int serving_size) {
+        this.serving_size = serving_size;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public void setIngredients(List<RecipeIngredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public void setSteps(List<RecipeStep> steps) {
+        this.steps = steps;
+    }
+
+    public void setTools(List<String> tools) {
+        this.tools = tools;
+    }
 }
