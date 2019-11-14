@@ -8,6 +8,7 @@ public class Recipe {
     private long id;
     private String name;
     private String description;
+    private String imgUrl;
     private int time;
     private int serving_size;
     private int calories;
@@ -17,10 +18,11 @@ public class Recipe {
 //    private List<Integer> techniques;
 //    private List<Integer> tags;
 
-    public Recipe(long id, String name, String description, int time, int serving_size, int calories) {
+    public Recipe(long id, String name, String description, String imgUrl, int time, int serving_size, int calories) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.imgUrl = imgUrl;
         this.time = time;
         this.serving_size = serving_size;
         this.calories = calories;
