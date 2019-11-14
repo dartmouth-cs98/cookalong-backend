@@ -55,8 +55,64 @@ public class RecipeController {
         toReturn.setIngredients(ingredients);
         List<String> tools = new ArrayList<>();
         tools.add("Cutting board");
+        tools.add("Tablespoon measure");
         tools.add("Butter knife");
         tools.add("Skillet");
+        tools.add("Stove");
+        toReturn.setTools(tools);
+        return toReturn;
+    }
+
+    @RequestMapping("/pho")
+    public Recipe getPho() {
+        Recipe toReturn = new Recipe(
+                gcid.get() + 1,
+                 "Cheater Pho",
+                "Vietnamese noodle dish, but with a quick and easy recipe",
+                60,
+                2,
+                750
+        );
+        List<RecipeStep> steps = new ArrayList<>();
+        steps.add(new RecipeStep(1, "Thinly slice onion and jalapeño.", ""));
+        steps.add(new RecipeStep(2, "Mince garlic.", ""));
+        steps.add(new RecipeStep(3, "Grate ginger", ""));
+        steps.add(new RecipeStep(4, "In a large pot of water, cook rice noodles according to package instructions; drain well and set aside.", ""));
+        steps.add(new RecipeStep(5, "Heat 1 tablespoon olive oil in a large stockpot or Dutch oven over medium heat.", ""));
+        steps.add(new RecipeStep(6, "Season chicken with salt and pepper, to taste.", ""));
+        steps.add(new RecipeStep(7, "Add chicken to the stockpot and cook until golden, about 2-3 minutes; set aside.", ""));
+        steps.add(new RecipeStep(8, "Add remaining 1 tablespoon oil to the stockpot.", ""));
+        steps.add(new RecipeStep(9, "Add garlic and ginger, and cook, stirring frequently, until fragrant, about 1-2 minutes.", ""));
+        steps.add(new RecipeStep(10, "Whisk in chicken stock, hoisin sauce and fish sauce.", ""));
+        steps.add(new RecipeStep(11, "Bring to a boil; reduce heat and simmer for 10 minutes.", ""));
+        steps.add(new RecipeStep(12, "Serve immediately with rice noodles and chicken, garnished with onion, bean sprouts, cilantro, mint, jalapeno and limes, if desired.", ""));
+        steps.add(new RecipeStep(13, "Now eat it.", ""));
+        toReturn.setSteps(steps);
+        List<RecipeIngredient> ingredients = new ArrayList<>();
+        ingredients.add(new RecipeIngredient(1, "Dried rice noodles", "8 ounces"));
+        ingredients.add(new RecipeIngredient(2, "Olive oil", "2 tablespoons"));
+        ingredients.add(new RecipeIngredient(3,"Boneless, skinless chicken thighs", "1 pound"));
+        ingredients.add(new RecipeIngredient(4, "Garlic", "3 cloves"));
+        ingredients.add(new RecipeIngredient(5, "Ginger", "1 tablespoon"));
+        ingredients.add(new RecipeIngredient(6, "Kosher salt and freshly ground black pepper", "To taste"));
+        ingredients.add(new RecipeIngredient(7, "Chicken stock", "6 cups"));
+        ingredients.add(new RecipeIngredient(8, "Hoisin sauce", "2 tablespoons"));
+        ingredients.add(new RecipeIngredient(9, "Fish sauce", "1 tablespoon"));
+        ingredients.add(new RecipeIngredient(10, "Onion", "1"));
+        ingredients.add(new RecipeIngredient(11, "Bean sprouts", "2 cups"));
+        ingredients.add(new RecipeIngredient(12, "Cilantro leaves", "1/2 cup"));
+        ingredients.add(new RecipeIngredient(13, "Mint leaves", "1/2 cup"));
+        ingredients.add(new RecipeIngredient(14, "Jalapeño", "1"));
+        ingredients.add(new RecipeIngredient(15, "Limes, halved", "2"));
+        toReturn.setIngredients(ingredients);
+        List<String> tools = new ArrayList<>();
+        tools.add("Large pot");
+        tools.add("Chef's knife");
+        tools.add("Cutting board");
+        tools.add("Grater");
+        tools.add("Tablespoon measure");
+        tools.add("Cup measure");
+        tools.add("Dutch oven/stockpot");
         tools.add("Stove");
         toReturn.setTools(tools);
         return toReturn;
