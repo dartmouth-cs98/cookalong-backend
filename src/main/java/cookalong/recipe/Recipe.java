@@ -55,6 +55,10 @@ public class Recipe {
         return calories;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
     public List<RecipeIngredient> getIngredients() {
         return ingredients;
     }
