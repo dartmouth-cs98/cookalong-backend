@@ -1,6 +1,6 @@
 # Cookalong Backend
 
-CookAlong is an augmented reality application to help streamline the cooking process, including slecting recipes, step-by-step instructions, and education on techniques, processes, and ingredients.
+CookAlong is an augmented reality application to help streamline the cooking process, including selecting recipes, step-by-step instructions, and education on techniques, processes, and ingredients.
 
 ## Architecture
 This REST API is built with Java Spring Boot, deployed with Heroku. The communication with JSON objects is facilitated with [Jackson](https://www.baeldung.com/jackson). Currently, objects are served statically, so there is no storage or database, but it will be built in AWS.
