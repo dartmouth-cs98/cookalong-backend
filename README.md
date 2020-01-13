@@ -3,22 +3,23 @@
 CookAlong is an augmented reality application to help streamline the cooking process, including selecting recipes, step-by-step instructions, and education on techniques, processes, and ingredients.
 
 ## Architecture
-This REST API is built with Java Spring Boot, deployed with Heroku. The communication with JSON objects is facilitated with [Jackson](https://www.baeldung.com/jackson). Currently, objects are served statically, so there is no storage or database, but it will be built in AWS.
+This REST API is built with Java Spring Boot, deployed with Heroku. The communication with JSON objects is facilitated with [Jackson](https://www.baeldung.com/jackson). The current version stores objects in a MongoDB database, running locally.
 
 ## Endpoints
 The API root url is <https://cookalong-api.herokuapp.com>
 
-### Recipe (/recipe)
-Returns one recipe. Currently has default value of grilled cheese name, with little additional information added. ID increments with each call. 
+### All Recipes (/recipes)
+Returns all recipes in the database
 
-### Grilled Cheese (/grilledcheese)
-Returns a grilled cheese recipe, with all steps, tools, and ingredients added to the object. 
+### Recipe by ID (/recipes/{recipeId})
+Returns from the recipe database whichever recipe matches the id passed. Returns null if not found. 
 
-### Pho (/pho)
-Returns a pho recipe, similarly populated with all necessary fields.
+### Add Recipe (/recipes/add)
+Adds a recipe to the database. The request body must match the structure of the Recipe object.
 
 ## Build
 To build locally, download the repo and run mvn build. Then mvn run will deploy the API to <http://localhost:5000/>
+Make sure that mongo is running locally on your machine to have the MongoDB backend connection. Create a db that matches the db name in application.properties.
 
 ## Deployment
 Deployment is to Heroku, which is added as a remote.
