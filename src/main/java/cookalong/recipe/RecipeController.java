@@ -21,6 +21,11 @@ public class RecipeController {
         return recipeRepository.findAll();
     }
 
+    @RequestMapping(value = "/{recipeId}")
+    public Recipe getRecipeById(@PathVariable String recipeId) {
+        return recipeRepository.findById(recipeId).orElse(null);
+    }
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Recipe addNewRecipe(@RequestBody Recipe recipe) {
         return recipeRepository.save(recipe);
