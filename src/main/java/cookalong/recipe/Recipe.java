@@ -1,6 +1,7 @@
 package cookalong.recipe;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -10,7 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Recipe {
 
     @Id
-    private long id;
+    private String id;
+    private Date creationDate = new Date();
     private String name;
     private String description;
     private String imgUrl;
@@ -23,7 +25,7 @@ public class Recipe {
 //    private List<Integer> techniques;
 //    private List<Integer> tags;
 
-    public Recipe(long id, String name, String description, String imgUrl, int time, int serving_size, int calories) {
+    public Recipe(String id, String name, String description, String imgUrl, int time, int serving_size, int calories) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -36,8 +38,12 @@ public class Recipe {
         this.steps = new ArrayList<>();
     }
 
-    public long getId() {
+    public String getId() {
         return id;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
     }
 
     public String getName() {
@@ -76,8 +82,12 @@ public class Recipe {
         return tools;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
     public void setName(String name) {
@@ -98,6 +108,10 @@ public class Recipe {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public void setIngredients(List<RecipeIngredient> ingredients) {
