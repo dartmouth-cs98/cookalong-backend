@@ -1,21 +1,14 @@
 package cookalong.recipe;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cookalong.dal.RecipeRepository;
 
 @RestController
+@RequestMapping(value = "/recipes")
 public class RecipeController {
-
-    private final AtomicLong counter = new AtomicLong();
-    private final AtomicLong gcid = counter;
 
     private final RecipeRepository recipeRepository;
 
@@ -23,7 +16,12 @@ public class RecipeController {
         this.recipeRepository = recipeRepository;
     }
 
-    @RequestMapping("/add")
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public List<Recipe> getAllRecipes() {
+        return recipeRepository.findAll();
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Recipe addNewRecipe(@RequestBody Recipe recipe) {
         return recipeRepository.save(recipe);
     }
