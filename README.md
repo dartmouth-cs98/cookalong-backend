@@ -3,7 +3,7 @@
 CookAlong is an augmented reality application to help streamline the cooking process, including selecting recipes, step-by-step instructions, and education on techniques, processes, and ingredients.
 
 ## Architecture
-This REST API is built with Java Spring Boot, deployed with Heroku. The communication with JSON objects is facilitated with [Jackson](https://www.baeldung.com/jackson). The current version stores objects in a MongoDB database, running locally.
+This REST API is built with Java Spring Boot, deployed with Heroku. The communication with JSON objects is facilitated with [Jackson](https://www.baeldung.com/jackson). Documents are stored in an mLab MongoDB backend on Heroku. 
 
 ## Endpoints
 The API root url is <https://cookalong-api.herokuapp.com>
@@ -16,6 +16,9 @@ Returns from the recipe database whichever recipe matches the id passed. Returns
 
 ### Add Recipe (/recipes/add)
 Adds a recipe to the database. The request body must match the structure of the Recipe object.
+
+### Delete Recipe (/recipes/delete?recipeId={recipeId})
+Deletes a recipe from the database.
 
 ## Build
 To build locally, download the repo and run mvn build. Then mvn run will deploy the API to <http://localhost:5000/>
