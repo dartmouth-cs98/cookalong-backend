@@ -49,4 +49,21 @@ public class RecipeController {
         }
         return toReturn;
     }
+
+    @RequestMapping(value = "/allingredients/{recipeId}", method = RequestMethod.GET)
+    public List<List<String>> getAllStepIngredients(@PathVariable String recipeId) {
+        List<List<String>> toReturn = new ArrayList<>();
+        Recipe recipe = recipeRepository.findById(recipeId).orElse(null);
+        if (recipe != null) {
+            List<RecipeIngredient> ingredients = recipe.getIngredients();
+            for (RecipeStep step : recipe.getSteps()) {
+                List<String> imgUrls = new ArrayList<>();
+                for (int i : step.getIngredients()) {
+                    imgUrls.add(ingredients.get(i).getImgUrl());
+                }
+                toReturn.add(imgUrls);
+            }
+        }
+        return toReturn;
+    }
 }
