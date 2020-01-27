@@ -20,6 +20,13 @@ Adds a recipe to the database. The request body must match the structure of the 
 ### Delete Recipe (/recipes/delete?recipeId={recipeId})
 Deletes a recipe from the database.
 
+### Get Ingredient Photos for a Recipe Step (/recipes/ingredients/{recipeId}?index={index})
+Returns the image urls of the ingredients associated with a specific step of the recipe. Step indices start at 0.
+
+### Get Ingredient Photos for a Recipe (/recipes/allingredients/{recipeId}
+Returns the image urls of the ingredients associated with each step of a recipe. Returns as a list of lists.
+
+
 ## Build
 To build locally, download the repo and run mvn build. Then mvn run will deploy the API to <http://localhost:5000/>
 Make sure that mongo is running locally on your machine to have the MongoDB backend connection. Create a db that matches the db name in application.properties.
