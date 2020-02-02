@@ -32,6 +32,11 @@ public class RecipeController {
         return recipeRepository.save(recipe);
     }
 
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    public Recipe updateRecipe(@RequestParam String recipeId, @RequestBody Recipe recipe) {
+        recipe.setId(recipeId);
+        return recipeRepository.save(recipe);
+    }
 
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public void deleteRecipe(@RequestParam String recipeId) {
