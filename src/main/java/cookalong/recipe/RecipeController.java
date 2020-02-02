@@ -38,6 +38,14 @@ public class RecipeController {
         recipeRepository.deleteById(recipeId);
     }
 
+    @RequestMapping(value = "/steps/insert", method = RequestMethod.POST)
+    public Recipe insertStep(@RequestParam String recipeId, @RequestParam int index, @RequestBody RecipeStep step) {
+        Recipe toEdit = recipeRepository.findById(recipeId).orElse(null);
+        if (toEdit == null) return null;
+        toEdit.getSteps().add(index, step);
+        return recipeRepository.save(toEdit);
+    }
+
     @RequestMapping(value = "/ingredients/{recipeId}", method = RequestMethod.GET)
     public List<String> getStepIngredients(@PathVariable String recipeId, @RequestParam int index) {
         List<String> toReturn = new ArrayList<>();
