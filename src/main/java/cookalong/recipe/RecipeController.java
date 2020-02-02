@@ -29,7 +29,9 @@ public class RecipeController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Recipe addNewRecipe(@RequestBody Recipe recipe) {
-        return recipeRepository.save(recipe);
+        List found = recipeRepository.findByName(recipe.getName());
+        if (found.size() == 0) return recipeRepository.save(recipe);
+        else return null;
     }
 
 
