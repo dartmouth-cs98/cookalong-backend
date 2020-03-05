@@ -17,16 +17,19 @@ public class RecipeController {
         this.recipeRepository = recipeRepository;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/{recipeId}", method = RequestMethod.GET)
     public Recipe getRecipeById(@PathVariable String recipeId) {
         return recipeRepository.findById(recipeId).orElse(null);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Recipe addNewRecipe(@RequestBody Recipe recipe) {
         List found = recipeRepository.findByName(recipe.getName());
@@ -34,17 +37,20 @@ public class RecipeController {
         else return null;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Recipe updateRecipe(@RequestParam String recipeId, @RequestBody Recipe recipe) {
         recipe.setId(recipeId);
         return recipeRepository.save(recipe);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public void deleteRecipe(@RequestParam String recipeId) {
         recipeRepository.deleteById(recipeId);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/steps/insert", method = RequestMethod.POST)
     public Recipe insertStep(@RequestParam String recipeId, @RequestParam int index, @RequestBody RecipeStep step) {
         Recipe toEdit = recipeRepository.findById(recipeId).orElse(null);
@@ -53,6 +59,7 @@ public class RecipeController {
         return recipeRepository.save(toEdit);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/ingredients/{recipeId}", method = RequestMethod.GET)
     public List<String> getStepIngredients(@PathVariable String recipeId, @RequestParam int index) {
         List<String> toReturn = new ArrayList<>();
@@ -65,6 +72,7 @@ public class RecipeController {
         return toReturn;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/allingredients/{recipeId}", method = RequestMethod.GET)
     public List<List<String>> getAllStepIngredients(@PathVariable String recipeId) {
         List<List<String>> toReturn = new ArrayList<>();
