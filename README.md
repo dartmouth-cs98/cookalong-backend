@@ -1,6 +1,8 @@
 # Cookalong Backend
 
-CookAlong is an augmented reality application to help streamline the cooking process, including selecting recipes, step-by-step instructions, and education on techniques, processes, and ingredients.
+CookAlong is an augmented reality application to help streamline the cooking process, including selecting recipes, step-by-step instructions, and education on techniques, processes, and ingredients. A web interface is published for interacting with this backend database at <https://cookalong-interface.surge.sh/>
+
+![Logo](https://github.com/dartmouth-cs98/19f-cookalong/blob/master/cookalong-horiz.png)
 
 ## Architecture
 This REST API is built with Java Spring Boot, deployed with Heroku. The communication with JSON objects is facilitated with [Jackson](https://www.baeldung.com/jackson). Documents are stored in an mLab MongoDB backend on Heroku. 
